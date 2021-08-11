@@ -16,7 +16,12 @@ export default createStore({
     setFieldSize(state, payload) {
       state.fieldHeight = payload.fieldHeight;
       state.fieldWidth = payload.fieldWidth;
-      console.log(state.fieldHeight + " " + state.fieldWidth);
+      if (state.left + state.width > state.fieldWidth) {
+        state.left = 10;
+      }
+      if (state.top + state.height > state.fieldHeight) {
+        state.top = 10;
+      }
     },
     setMoveRect(state, payload) {
       state.moveRect = payload;
