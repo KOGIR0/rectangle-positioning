@@ -1,5 +1,7 @@
 # rectangle-positioning
 
+![](https://github.com/KOGIR0/rectangle-positioning/blob/main/images/rp.png)
+
 ## Project setup
 ```
 npm install
