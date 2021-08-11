@@ -1,15 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="row" @mouseup="() => this.$store.commit('setMoveRect', false)">
+    <Field />
+    <Control />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Field from "./components/Field.vue";
+import Control from "./components/Control.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Field,
+    Control,
   },
 };
 </script>
@@ -21,6 +25,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 </style>
