@@ -17,7 +17,6 @@ export default {
   methods: {
     AllowRectangleMove: function (e) {
       this.$store.commit("setMoveRect", true);
-      console.log(this.$refs.mouseControl);
       // offset from the center of control rectangle
       let controlCenterPos = {
         x:
