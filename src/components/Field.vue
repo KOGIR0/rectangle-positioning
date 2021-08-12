@@ -18,11 +18,16 @@ export default {
   unmounted() {
     window.removeEventListener("resize", this.saveFieldSize);
   },
+  mounted() {
+    this.saveFieldSize();
+  },
   methods: {
     saveFieldSize() {
       this.$store.commit("setFieldSize", {
-        fieldWidth: this.$refs.field.clientWidth,
-        fieldHeight: this.$refs.field.clientHeight,
+        fieldTop: this.$refs.field.offsetTop,
+        fieldLeft: this.$refs.field.offsetLeft,
+        fieldWidth: this.$refs.field.offsetLeft + this.$refs.field.offsetWidth,
+        fieldHeight: this.$refs.field.offsetTop + this.$refs.field.offsetHeight,
       });
     },
   },
