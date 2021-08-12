@@ -1,6 +1,6 @@
 <template>
   <MouseControl
-    id="right-width"
+    id="right-control"
     :onDrag="DragProcess"
     :onMouseDown="MouseDown"
   />
@@ -34,7 +34,7 @@ export default {
 @use 'sass:math';
 @import "../../styles/styles.scss";
 
-#right-width {
+#right-control {
   position: absolute;
   top: 50% - math.div($control-rect-height, 2);
   left: 100% - math.div($control-rect-width, 2);

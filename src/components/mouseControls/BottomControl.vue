@@ -1,6 +1,6 @@
 <template>
   <MouseControl
-    id="bottom-height"
+    id="bottom-control"
     :onDrag="DragProcess"
     :onMouseDown="MouseDown"
   />
@@ -34,7 +34,7 @@ export default {
 @use 'sass:math';
 @import "../../styles/styles.scss";
 
-#bottom-height {
+#bottom-control {
   position: absolute;
   top: 100% - math.div($control-rect-height, 2);
   left: 50% - math.div($control-rect-width, 2);

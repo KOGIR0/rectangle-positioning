@@ -1,6 +1,6 @@
 <template>
   <MouseControl
-    id="position"
+    id="center-control"
     :onDrag="MoveRectangle"
     :onMouseDown="MouseDown"
   />
@@ -39,7 +39,7 @@ export default {
 @use 'sass:math';
 @import "../../styles/styles.scss";
 
-#position {
+#center-control {
   position: absolute;
   top: 50% - math.div($control-rect-height, 2);
   left: 50% - math.div($control-rect-width, 2);
