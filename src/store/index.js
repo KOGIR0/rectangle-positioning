@@ -41,12 +41,12 @@ export default createStore({
       }
     },
     setWidth(state, payload) {
-      if (payload + state.left < 800) {
+      if (payload + state.left < state.fieldWidth) {
         state.width = payload;
       }
     },
     setHeight(state, payload) {
-      if (payload + state.top < 500) {
+      if (payload + state.top < state.fieldHeight) {
         state.height = payload;
       }
     },
