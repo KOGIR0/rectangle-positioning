@@ -9,6 +9,8 @@ export default createStore({
     offsetX: 0,
     offsetY: 0,
     moveRect: false,
+    fieldTop: 0,
+    fieldLeft: 0,
     fieldWidth: 800,
     fieldHeight: 500,
   },
@@ -16,11 +18,13 @@ export default createStore({
     setFieldSize(state, payload) {
       state.fieldHeight = payload.fieldHeight;
       state.fieldWidth = payload.fieldWidth;
+      state.fieldLeft = payload.fieldLeft;
+      state.fieldTop = payload.fieldTop;
       if (state.left + state.width > state.fieldWidth) {
-        state.left = 10;
+        state.left = state.fieldLeft;
       }
       if (state.top + state.height > state.fieldHeight) {
-        state.top = 10;
+        state.top = state.fieldTop;
       }
     },
     setMoveRect(state, payload) {
@@ -31,12 +35,18 @@ export default createStore({
       state.offsetY = payload.offsetY;
     },
     setTop(state, payload) {
-      if (payload > 10 && payload + state.height < state.fieldHeight) {
+      if (
+        payload > state.fieldTop &&
+        payload + state.height < state.fieldHeight
+      ) {
         state.top = payload;
       }
     },
     setLeft(state, payload) {
-      if (payload > 10 && payload + state.width < state.fieldWidth) {
+      if (
+        payload > state.fieldLeft &&
+        payload + state.width < state.fieldWidth
+      ) {
         state.left = payload;
       }
     },
