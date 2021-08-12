@@ -36,12 +36,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use 'sass:math';
 @import "../../styles/styles.scss";
 
 #top-control {
   position: absolute;
-  top: -$control-rect-height / 2;
-  left: 50% - $control-rect-width / 2;
+  top: math.div(-$control-rect-height, 2);
+  left: 50% - math.div($control-rect-width, 2);
   width: $control-rect-width;
   height: $control-rect-height;
   background-color: $control-bc;
