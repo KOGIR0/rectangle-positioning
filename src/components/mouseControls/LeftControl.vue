@@ -1,9 +1,5 @@
 <template>
-  <MouseControl
-    id="left-control"
-    :onDrag="LeftDragProcess"
-    :onMouseDown="MouseDown"
-  />
+  <MouseControl id="left-control" :onDrag="LeftDragProcess" />
 </template>
 
 <script>
@@ -15,16 +11,6 @@ export default {
     MouseControl,
   },
   methods: {
-    MouseDown(e) {
-      // offset from the center of control rect
-      let mouseOffsetX = e.pageX - this.$store.state.left;
-      let mouseOffsetY =
-        e.pageY - this.$store.state.top - this.$store.state.height / 2;
-      this.$store.commit("setOffset", {
-        offsetX: mouseOffsetX,
-        offsetY: mouseOffsetY,
-      });
-    },
     LeftDragProcess(e) {
       this.$store.commit(
         "setWidth",

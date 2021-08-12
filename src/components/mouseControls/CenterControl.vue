@@ -1,9 +1,5 @@
 <template>
-  <MouseControl
-    id="center-control"
-    :onDrag="MoveRectangle"
-    :onMouseDown="MouseDown"
-  />
+  <MouseControl id="center-control" :onDrag="MoveRectangle" />
 </template>
 
 <script>
@@ -15,17 +11,6 @@ export default {
     MouseControl,
   },
   methods: {
-    MouseDown(e) {
-      // offset from the center of control rectangle
-      let mouseOffsetX =
-        e.pageX - this.$store.state.left - this.$store.state.width / 2;
-      let mouseOffsetY =
-        e.pageY - this.$store.state.top - this.$store.state.height / 2;
-      this.$store.commit("setOffset", {
-        offsetX: mouseOffsetX,
-        offsetY: mouseOffsetY,
-      });
-    },
     MoveRectangle(e) {
       this.$store.commit(
         "setTop",
