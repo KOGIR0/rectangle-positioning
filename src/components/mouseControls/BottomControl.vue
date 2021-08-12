@@ -16,9 +16,14 @@ export default {
   },
   methods: {
     MouseDown(e) {
+      // offset from center of control rectangle
+      let mouseOffsetX =
+        e.pageX - this.$store.state.left - this.$store.state.width / 2;
+      let mouseOffsetY =
+        e.pageY - this.$store.state.top - this.$store.state.height;
       this.$store.commit("setOffset", {
-        offsetX: e.pageX - this.$store.state.left - this.$store.state.width / 2,
-        offsetY: e.pageY - this.$store.state.top - this.$store.state.height,
+        offsetX: mouseOffsetX,
+        offsetY: mouseOffsetY,
       });
     },
     DragProcess(e) {
